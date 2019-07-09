@@ -1,0 +1,12 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/naveen/Desktop/GIT/learning/geolocation/src/main/scala/com/findhotel/geolocation/LoadLocationCsv.scala:43:21: fruitless type test: a value of type scala.util.Try[com.findhotel.geolocation.domain.Geolocation] cannot also be a RuntimeException (the underlying of RuntimeException)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          case exp: RuntimeException => logger.error("Error in location loading module", exp)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/naveen/Desktop/GIT/learning/geolocation/src/main/scala/com/findhotel/geolocation/LoadLocationCsv.scala:27:5: A try without a catch or finally is equivalent to putting its body in a block; no exceptions are handled.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    try {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/naveen/Desktop/GIT/learning/geolocation/src/main/scala/com/findhotel/geolocation/LoadLocationCsv.scala:36:25: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Failure((x: Throwable forSome x not in com.findhotel.geolocation.parser.GeolocationParsingException))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        loader.parseData(csvRecord) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
