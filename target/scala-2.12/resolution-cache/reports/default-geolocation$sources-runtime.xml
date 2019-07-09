@@ -7,7 +7,7 @@
 		revision="1.0.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190709180740"/>
+		date="20190709180813"/>
 	<dependencies>
 		<module organisation="org.apache.commons" name="commons-csv">
 			<revision name="1.5" status="release" pubdate="20170827011518" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-csv/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
