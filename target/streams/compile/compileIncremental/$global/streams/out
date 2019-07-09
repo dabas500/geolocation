@@ -2,14 +2,14 @@
 [0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
 [0m[[0m[0mdebug[0m] [0m[0mRecompiling all 13 sources: invalidated sources (13) exceeded 50.0% of all sources[0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 13 Scala sources to /Users/naveen/Desktop/GIT/learning/geolocation/target/scala-2.12/classes ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.6[0m
-[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.5:compile for Scala 2.12.6[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 120b0c5f for Scala compiler version 2.12.6[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.1.3:compile for Scala 2.12.6[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.1.3:compile for Scala 2.12.6[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 2750d0d2 for Scala compiler version 2.12.6[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-Xplugin:/Users/naveen/.ivy2/cache/org.wartremover/wartremover_2.12/jars/wartremover_2.12-2.3.7.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/naveen/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.6.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/naveen/Desktop/GIT/learning/geolocation/target/scala-2.12/classes:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-http_2.12/jars/akka-http_2.12-10.1.7.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-http-core_2.12/jars/akka-http-core_2.12-10.1.7.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-parsing_2.12/jars/akka-parsing_2.12-10.1.7.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/jars/akka-actor_2.12-2.5.19.jar:/Users/naveen/.ivy2/cache/com.typesafe/config/bundles/config-1.3.3.jar:/Users/naveen/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/bundles/scala-java8-compat_2.12-0.8.0.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-http-spray-json_2.12/jars/akka-http-spray-json_2.12-10.1.7.jar:/Users/naveen/.ivy2/cache/io.spray/spray-json_2.12/jars/spray-json_2.12-1.3.5.jar:/Users/naveen/.ivy2/cache/org.apache.commons/commons-csv/jars/commons-csv-1.5.jar:/Users/naveen/.ivy2/cache/com.typesafe.slick/slick_2.12/bundles/slick_2.12-3.3.0.jar:/Users/naveen/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/Users/naveen/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.2.jar:/Users/naveen/.ivy2/cache/com.h2database/h2/jars/h2-1.4.185.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-stream-testkit_2.12/jars/akka-stream-testkit_2.12-2.5.19.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-stream_2.12/jars/akka-stream_2.12-2.5.19.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-protobuf_2.12/jars/akka-protobuf_2.12-2.5.19.jar:/Users/naveen/.ivy2/cache/com.typesafe/ssl-config-core_2.12/bundles/ssl-config-core_2.12-0.3.6.jar:/Users/naveen/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.1.1.jar:/Users/naveen/.ivy2/cache/com.typesafe.akka/akka-testkit_2.12/jars/akka-testkit_2.12-2.5.19.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 10.032306193 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 10.053523845 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m

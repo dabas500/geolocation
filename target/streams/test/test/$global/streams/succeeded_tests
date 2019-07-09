@@ -1,4 +1,4 @@
 #Successful Tests
-#Tue Jul 09 14:57:05 CEST 2019
-com.findhotel.geolocation.webservice.GeoLocationControllerTest=1562677025782
-com.findhotel.geolocation.parser.GeoLocationLoaderTest=1562677024755
+#Tue Jul 09 18:32:51 CEST 2019
+com.findhotel.geolocation.parser.GeoLocationParserTest=1562689970199
+com.findhotel.geolocation.webservice.GeoLocationControllerTest=1562689971326

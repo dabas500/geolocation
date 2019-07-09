@@ -5,7 +5,10 @@ import java.nio.file.Paths
 import java.util.concurrent.atomic.AtomicLong
 
 import com.findhotel.geolocation.domain.Geolocation
-import com.findhotel.geolocation.parser.{GeoLocationLoader, GeolocationParsingException}
+import com.findhotel.geolocation.parser.{
+  GeoLocationParser,
+  GeolocationParsingException
+}
 import com.findhotel.geolocation.persistence.GeoLocationPersistence
 import org.apache.commons.csv.{CSVFormat, CSVParser}
 
@@ -13,10 +16,17 @@ import scala.collection.JavaConverters._
 import scala.concurrent.ExecutionContextExecutor
 import scala.util.{Failure, Success, Try}
 
-
-class LoadLocationCsv(database: GeoLocationPersistence,
-                      filePath: String,
-                      batchSize: Int)(implicit executionContext: ExecutionContextExecutor) {
+/***
+  *
+  * @param database : the database to store locations records.
+  * @param filePath
+  * @param batchSize: controls the bulk update/insert batch size for database.
+  * @param executionContext: the thread pool to use for loading csv file into db.
+  */
+class LoadLocationCsv(
+    database: GeoLocationPersistence,
+    filePath: String,
+    batchSize: Int)(implicit executionContext: ExecutionContextExecutor) {
 
   import LoadLocationCsv._
 
@@ -28,26 +38,30 @@ class LoadLocationCsv(database: GeoLocationPersistence,
   def readAndLoadLocations(): Try[Unit] = Try {
 
     val reader = Paths.get(filePath)
-    val loader = GeoLocationLoader
-    val csvParser = CSVParser.parse(reader, Charset.forName("UTF-8"), CSVFormat.DEFAULT
-      .withFirstRecordAsHeader()
-      .withIgnoreHeaderCase()
-      .withTrim())
+    val loader = GeoLocationParser
+    val csvParser = CSVParser.parse(reader,
+                                    Charset.forName("UTF-8"),
+                                    CSVFormat.DEFAULT
+                                      .withFirstRecordAsHeader()
+                                      .withIgnoreHeaderCase()
+                                      .withTrim())
 
     csvParser.iterator().asScala.foreach { csvRecord =>
       loader.parseData(csvRecord) match {
-        case Success(location) => recordsRead = recordsRead + 1
+        case Success(location) =>
+          recordsRead = recordsRead + 1
           if (recordsRead % batchSize != 0)
             recordsBuffer += location
           else storeToDB()
-        case Failure(exp: GeolocationParsingException) => invalidRecordsCount.incrementAndGet()
+        case Failure(exp: GeolocationParsingException) =>
+          invalidRecordsCount.incrementAndGet()
           logger.debug(exp.msg)
-        case exp: RuntimeException => logger.error("Error in location loading module", exp)
+        case exp: RuntimeException =>
+          logger.error("Error in location loading module", exp)
       }
     }
     storeToDB()
   }
-
 
   private def storeToDB(): Unit = {
     val recordToInsert = recordsBuffer.size
@@ -75,6 +89,7 @@ object LoadLocationCsv {
 
   def apply(database: GeoLocationPersistence,
             filePath: String,
-            batchSize: Int = 10000)(implicit executionContext: ExecutionContextExecutor): LoadLocationCsv =
+            batchSize: Int = 10000)(
+      implicit executionContext: ExecutionContextExecutor): LoadLocationCsv =
     new LoadLocationCsv(database, filePath, batchSize)
 }

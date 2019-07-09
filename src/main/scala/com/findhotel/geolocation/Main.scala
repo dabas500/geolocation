@@ -1,6 +1,5 @@
 package com.findhotel.geolocation
 
-
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
@@ -13,15 +12,13 @@ import scala.concurrent.ExecutionContextExecutor
 import scala.concurrent.duration.Duration
 import scala.util.Failure
 
-
 object Main extends App {
 
   val filePath = System.getenv("FILE_PATH")
 
   if (filePath != null) {
     start(filePath)
-  }
-  else {
+  } else {
     println("FILE_PATH not defined.")
   }
 
@@ -38,9 +35,11 @@ object Main extends App {
     val csvLoader = LoadLocationCsv(database, path)
     csvLoader.readAndLoadLocations() match {
       case scala.util.Success(value) =>
-        println(s"Total Records Successfully loaded: ${csvLoader.validRecordsCount.get()}")
+        println(
+          s"Total Records Successfully loaded: ${csvLoader.validRecordsCount.get()}")
         println(s"Invalid Records: ${csvLoader.invalidRecordsCount.get()}")
-      case Failure(exp) => println(exp)
+      case Failure(exp) =>
+        println(exp)
         system.terminate()
     }
 
